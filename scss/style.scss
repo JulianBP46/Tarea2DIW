@@ -1,0 +1,30 @@
+@use 'varables' as *;
+@use 'mixins' as *;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.contenedor-principal {
+    max-width: $max-anch;
+    margin: 0 auto;
+    padding : $separacion;
+}
+
+
+.titulo-principal {
+    text-align: center;
+    margin-bottom: $separacion;
+    color: $color-titulos;
+}
+
+.contenedor-articulos {
+    
+}

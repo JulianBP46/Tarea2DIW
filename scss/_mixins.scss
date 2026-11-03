@@ -1,0 +1,13 @@
+@use 'varables' as *;
+
+@mixin tablet {
+    @media (min-width: $breakpoint-movil){
+        @content;
+    }
+}
+
+@mixin escritorio{
+    @media (min-width: $breakpoint-tablet){
+        @content;
+    }
+}
