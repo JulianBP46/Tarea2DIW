@@ -26,5 +26,68 @@ body{
 }
 
 .contenedor-articulos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $separacion;
+}
+
+.articulo{
+    flex: 0 0 100%;
+    @include tablet{
+        flex: 0 0 calc(50% - $separacion /2);
+        
+    }
+    @include escritorio{
+        flex: 0 0 calc((100% / 3) - ((2 * $separacion) / 3));
+    }
+
+    img{
+        width: 100%;
+        display: block;
+    }
+    display: flex;
+    flex-direction: column;
+    background-color: $color-fondoart;
+}
+
+.info-articulo{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+    padding: $separacion;
+    text-align: center;
+}
+
+h2{
+    text-transform: uppercase;
+    color: $color-titulos;
+    margin-bottom: 0.5rem;
+   
+}
+
+.meta{
+    color: black;
+    margin-bottom: 0.3rem;
+    font-size: 0.85rem;
     
+}
+
+.destacado{
+    color: $color-fechas;
+}
+
+.btn-leer-mas{
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: $color-boton;
+    padding: 0.6rem;
+    color: #ffffff;
+    margin-top: auto;
+    :hover{
+        cursor: pointer;
+        filter: brightness(0.9);
+    }
 }
