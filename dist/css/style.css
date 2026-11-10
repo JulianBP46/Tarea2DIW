@@ -26,35 +26,42 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.articulo {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 100%;
-          flex: 0 0 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 @media (min-width: 468px) {
-  .articulo {
+  .contenedor-articulos {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+@media (min-width: 468px) {
+  .contenedor-articulos .articulo {
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 calc(50% - 0.5rem);
-            flex: 0 0 calc(50% - 0.5rem);
+        -ms-flex: 0 1 calc(50% - 0.5rem);
+            flex: 0 1 calc(50% - 0.5rem);
   }
 }
 @media (min-width: 768px) {
-  .articulo {
+  .contenedor-articulos .articulo {
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 calc(33.3333333333% - 0.6666666667rem);
-            flex: 0 0 calc(33.3333333333% - 0.6666666667rem);
+        -ms-flex: 0 1 calc(33.3333333333% - 0.6666666667rem);
+            flex: 0 1 calc(33.3333333333% - 0.6666666667rem);
   }
 }
-.articulo img {
+.contenedor-articulos .articulo img {
   width: 100%;
-  display: block;
 }
-.articulo {
+.contenedor-articulos .articulo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -73,18 +80,16 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 1rem;
   text-align: center;
+  padding: 1rem;
+}
+.info-articulo p {
+  background-color: green;
 }
 
 h2 {
   text-transform: uppercase;
+  background-color: red;
   color: black;
   margin-bottom: 0.5rem;
 }

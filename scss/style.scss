@@ -1,5 +1,5 @@
-@use 'varables' as *;
-@use 'mixins' as *;
+@import "varables.scss";
+@import "mixins.scss";
 
 * {
     box-sizing: border-box;
@@ -27,40 +27,52 @@ body{
 
 .contenedor-articulos {
     display: flex;
-    flex-wrap: wrap;
-    gap: $separacion;
-}
-
-.articulo{
-    flex: 0 0 100%;
+    flex-direction: column;
     @include tablet{
-        flex: 0 0 calc(50% - $separacion /2);
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
         
     }
-    @include escritorio{
-        flex: 0 0 calc((100% / 3) - ((2 * $separacion) / 3));
-    }
+    .articulo{
+    
+         @include tablet{
+            flex: 0 1 calc(50% - $separacion /2);
+            
+        }
+        @include escritorio{
+            flex: 0 1 calc((100% / 3) - ((2 * $separacion) / 3));
+        }
 
-    img{
-        width: 100%;
-        display: block;
-    }
+        img{
+            width: 100%;
+
+        }
     display: flex;
     flex-direction: column;
     background-color: $color-fondoart;
 }
+    
+    
+}
+
+
 
 .info-articulo{
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-    align-items: center;
-    padding: $separacion;
+
     text-align: center;
+    padding: $separacion;
+    
+    p{
+        background-color: green;
+    }
 }
 
 h2{
     text-transform: uppercase;
+        background-color: red;
     color: $color-titulos;
     margin-bottom: 0.5rem;
    
@@ -78,14 +90,7 @@ h2{
 }
 
 .btn-leer-mas{
-    text-decoration: none;
-    display: inline-block;
-    text-transform: uppercase;
-    font-weight: bold;
-    background-color: $color-boton;
-    padding: 0.6rem;
-    color: #ffffff;
-    margin-top: auto;
+    @include boton();
     :hover{
         cursor: pointer;
         filter: brightness(0.9);

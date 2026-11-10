@@ -1,4 +1,4 @@
-@use 'varables' as *;
+
 
 @mixin tablet {
     @media (min-width: $breakpoint-movil){
@@ -10,4 +10,15 @@
     @media (min-width: $breakpoint-tablet){
         @content;
     }
+}
+
+@mixin boton(){
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: $color-boton;
+    padding: 0.6rem;
+    color: #ffffff;
+    margin-top: auto;
 }
