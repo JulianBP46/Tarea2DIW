@@ -65,14 +65,11 @@ body{
     text-align: center;
     padding: $separacion;
     
-    p{
-        background-color: green;
-    }
+   
 }
 
 h2{
     text-transform: uppercase;
-        background-color: red;
     color: $color-titulos;
     margin-bottom: 0.5rem;
    
@@ -90,7 +87,7 @@ h2{
 }
 
 .btn-leer-mas{
-    @include boton();
+    @include boton($color-boton, $color-fondoart);
     :hover{
         cursor: pointer;
         filter: brightness(0.9);
